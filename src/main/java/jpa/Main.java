@@ -1,4 +1,5 @@
-package jpa-basic;
+package jpa;
+
 
 public class Main {
     public static void main(String[] args) {
