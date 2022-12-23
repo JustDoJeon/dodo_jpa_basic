@@ -16,13 +16,16 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Member member = em.find(Member.class, 2L);
+            //비영속
+            Member member = new Member();
+            member.setId(1L);
+            member.setName("도도랍니다.");
 
-            System.out.println("member.getId() = " + member.getId());
-            System.out.println("member.getName() = " + member.getName());
-            member.setName("도도도");
+            System.out.println("====BEFORE====");
+            em.persist(member);
+            System.out.println("====AFTER====");
 
-            tx.commit();
+            tx.commit(); //이 시점에 DB에 쿼리가 날라가는거임!!!
         }catch(Exception e){
             tx.rollback();
         }finally{
