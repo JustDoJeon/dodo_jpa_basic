@@ -21,6 +21,7 @@ public class JpaMain {
             member.setId(1L);
             member.setName("도도랍니다.");
 
+            //영속
             System.out.println("====BEFORE====");
             em.persist(member);
             System.out.println("====AFTER====");
