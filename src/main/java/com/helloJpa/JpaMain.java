@@ -17,14 +17,13 @@ public class JpaMain {
 
         try {
             //비영속
-            Member member = new Member();
-            member.setId(1L);
-            member.setName("도도랍니다.");
+            Member member1 = new Member(150L, "A");
+            Member member2 = new Member(160L, "B");
 
-            //영속
-            System.out.println("====BEFORE====");
-            em.persist(member);
-            System.out.println("====AFTER====");
+            em.persist(member1);
+            em.persist(member2);
+
+            System.out.println("====================");
 
             tx.commit(); //이 시점에 DB에 쿼리가 날라가는거임!!!
         }catch(Exception e){
